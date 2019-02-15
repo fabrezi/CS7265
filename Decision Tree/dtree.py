@@ -3,6 +3,7 @@
 import pandas as pd
 
 data = pd.read_csv("C:\\Users\\farid-PC\\Desktop\\thebook.csv")
+data.info
 print(data)
 
 #find the best root
