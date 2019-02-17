@@ -32,9 +32,8 @@
 ###########################################################################################
 import pandas as pd
 
-#upload data
+
 data = pd.read_csv("C:\\Users\\farid\\Desktop\\CS7265\\car.training.csv", header=None)
-#place labels on column
 data.rename(columns={0: 'buying', 1: 'maint', 2: 'doors', 3: 'persons', 4: 'lug_boot', 5: 'safety', 6: 'class'}, inplace=True)
 data.to_csv('car.training', index=False)
 data.info
