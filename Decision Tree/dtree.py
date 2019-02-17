@@ -43,47 +43,48 @@ import pandas as pd
 data = pd.read_csv("C:\\Users\\farid\\Desktop\\CS7265\\car.training.csv", header=None)
 data.rename(columns={0: 'buying', 1: 'maint', 2: 'doors', 3: 'persons', 4: 'lug_boot', 5: 'safety', 6: 'class'}, inplace=True)
 data.to_csv('car.training', index=False)
-#print(data)
+print(data)
 
-print(                                                                         )
+print('\n')
 
 
 
 # ft stands for frequency table
-buy_ft = data.groupby(["buying", "class"]).size()
-#data.assign(sum) #we need to find a way to retirive the values form the
-#output.
-data.rename(columns={2: 'sum'}, inplace=True)
+buy_ft = data.groupby(["buying", "class"]).size().reset_index(name='sum')
 print(buy_ft)
+print('\n')
 #calculate gini index of each attribute of buy:
 class_sum = 400 ; total_sum = 800 #these sum represent the total of acc and unacc column total and total sum. it is the same for all features
+
 #gini (buy_high) = 1- (buy_high_acc/400)^2 - (buy_high_unacc/400)^2
 #gini (buy_low) = 1 - (buy_low_acc/400)^2....
 #gini (buy_med) = 1 - ....
 #gini (buy_vhigh) = 1- ....
-buy_low_acc = buy_ft.loc['low', 'acc']
-print(buy_low_acc)
+
+#buy_low_acc = buy_ft.loc['low', 'acc']
+#print(buy_low_acc)
 #buy_low_unacc = buy_ft.loc['low', 'unacc']
 #print(buy_low_unacc)
 
 #gini sum(buying) = (gini of buy_high * (buy_high_acc + buy_high_unacc)/800) + (gini of buy_vhigh * (buy_vhigh....)
 
-maint_ft = data.groupby(["maint", "class"]).size()
+maint_ft = data.groupby(["maint", "class"]).size().reset_index(name='sum')
 print(maint_ft)
 #gini of
+print('\n')
 
-doors_ft = data.groupby(["doors", "class"]).size()
-print(doors_ft)
+doors_ft = data.groupby(["doors", "class"]).size().reset_index(name='sum')
+print(doors_ft) #ERROR
+print('\n')
 
-
-persons_ft = data.groupby(["persons", "class"]).size()
+persons_ft = data.groupby(["persons", "class"]).size().reset_index(name='sum')
 print(persons_ft)
+print('\n')
 
-
-lug_boot_ft = data.groupby(["lug_boot" , "class"]).size()
+lug_boot_ft = data.groupby(["lug_boot" , "class"]).size().reset_index(name='sum')
 print(lug_boot_ft)
+print('\n')
 
-
-safety_ft = data.groupby(["safety", "class"]).size()
+safety_ft = data.groupby(["safety", "class"]).size().reset_index(name='sum')
 print(safety_ft)
-
+print('\n')
