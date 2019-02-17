@@ -43,42 +43,47 @@ import pandas as pd
 data = pd.read_csv("C:\\Users\\farid\\Desktop\\CS7265\\car.training.csv", header=None)
 data.rename(columns={0: 'buying', 1: 'maint', 2: 'doors', 3: 'persons', 4: 'lug_boot', 5: 'safety', 6: 'class'}, inplace=True)
 data.to_csv('car.training', index=False)
-print(data)
+#print(data)
 
 print(                                                                         )
 
+
+
 # ft stands for frequency table
 buy_ft = data.groupby(["buying", "class"]).size()
-#get the total_sum of buy: buy_sum
+#data.assign(sum) #we need to find a way to retirive the values form the
+#output.
+data.rename(columns={2: 'sum'}, inplace=True)
 print(buy_ft)
-buy_sum = buy_ft.sum()
-print("total sum: " , buy_sum)
 #calculate gini index of each attribute of buy:
+class_sum = 400 ; total_sum = 800 #these sum represent the total of acc and unacc column total and total sum. it is the same for all features
+#gini (buy_high) = 1- (buy_high_acc/400)^2 - (buy_high_unacc/400)^2
+#gini (buy_low) = 1 - (buy_low_acc/400)^2....
+#gini (buy_med) = 1 - ....
+#gini (buy_vhigh) = 1- ....
+buy_low_acc = buy_ft.loc['low', 'acc']
+print(buy_low_acc)
+#buy_low_unacc = buy_ft.loc['low', 'unacc']
+#print(buy_low_unacc)
+
+#gini sum(buying) = (gini of buy_high * (buy_high_acc + buy_high_unacc)/800) + (gini of buy_vhigh * (buy_vhigh....)
 
 maint_ft = data.groupby(["maint", "class"]).size()
 print(maint_ft)
-maint_sum = maint_ft.sum()
-print("total sum: " , maint_sum)
+#gini of
 
 doors_ft = data.groupby(["doors", "class"]).size()
 print(doors_ft)
-doors_sum = doors_ft.sum()
-print("total sum: " , doors_sum)
+
 
 persons_ft = data.groupby(["persons", "class"]).size()
 print(persons_ft)
-persons_sum = persons_ft.sum()
-print("total sum: " , persons_sum)
+
 
 lug_boot_ft = data.groupby(["lug_boot" , "class"]).size()
 print(lug_boot_ft)
-lug_boot_sum = lug_boot_ft.sum()
-print("total sum: " , lug_boot_sum)
+
 
 safety_ft = data.groupby(["safety", "class"]).size()
 print(safety_ft)
-safety_sum = safety_ft.sum()
-print("total sum: " , safety_sum)
-
-
 
