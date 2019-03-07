@@ -19,11 +19,11 @@ print('\n')
 
 
 #correlation matrix
-#corr_matrix = data.corr().round(2)
-#sns.heatmap(data=corr_matrix, annot=True, fmt="g", cmap='viridis')
-#plt.show()
+corr_matrix = data.corr().round(2)
+sns.heatmap(data=corr_matrix, annot=True, fmt="g", cmap='viridis')
+plt.show()
 
-#train the classifier
+
 
 #test_method
 #def plotFeatures(col_list):
