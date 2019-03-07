@@ -19,8 +19,22 @@ print('\n')
 
 
 #correlation matrix
-corr_matrix = data.corr().round(2)
-sns.heatmap(data=corr_matrix, annot=True, fmt="g", cmap='viridis')
-plt.show()
+#corr_matrix = data.corr().round(2)
+#sns.heatmap(data=corr_matrix, annot=True, fmt="g", cmap='viridis')
+#plt.show()
 
 #train the classifier
+
+#test_method
+#def plotFeatures(col_list):
+  #  plt.figure(figsize=(10,14))
+   # i=0
+    #print(len(col_list))
+    #for col in col_list:
+     #   i += 1
+      #  plt.subplot(7,2,i)
+       # plt.plot(data[col], data["MEDV"], marker='.', linestyle='none')
+        #plt.title(title%(col))
+        #plt.tight_layout()
+#colnames = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NPX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT']
+#plotFeatures(colnames)
