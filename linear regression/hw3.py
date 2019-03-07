@@ -38,3 +38,9 @@ plt.show()
         #plt.tight_layout()
 #colnames = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NPX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT']
 #plotFeatures(colnames)
+
+#measure the sample correlation cofficient
+mm = data["MEDV"].mean()
+aa = data["CRIM"].mean()
+print("MEDV mean:" , mm)
+print(aa)
