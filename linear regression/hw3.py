@@ -32,6 +32,7 @@ sns.heatmap(data=corr_matrix, annot=True, fmt="g", cmap='viridis')
 #display scatterplot of each independent variable??
 
 #measure the sample correlation cofficient
+# x | y | (x-x') | (y-y') | (x-x')*(y-y') | (x-x')^2 | (y-y')^2
 mm = data["MEDV"].mean()
 aa = data["CRIM"].mean()
 print("MEDV mean:" , mm)
