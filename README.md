@@ -18,5 +18,8 @@ is valid, a set of inputs will cause the state of the system to transition to th
 To keep concurrency, each node has to have same compute and memory resource allocated. This adds 
 overhead and reduces throughput. Another method is to use erasure code. it allows each node to
 store a part of data that can later be used to reconstruct the original data. But the method adds
-high level of complexity. Sift fixes the problem by creating two nodes: CPU node (store state) and passive moemeory node (store consensus log an state machine). This adds a level ofabstraction and reduces redunancy. Traditional Paxos protocols go through software network layersin OS kernels which increases consensus latency. The solution present is remote data memory access
-(RDMA). RDMA allows to perform read/ write operation on remote servers. *improvement of F +1
+high level of complexity. Sift fixes the problem by creating two nodes: CPU node (store state) and passive moemeory node (store consensus log an state machine). This adds a level of
+abstraction and reduces redunancy. Traditional Paxos protocols go through software network layers
+in OS kernels which increases consensus latency. The solution present is remote data memory access
+(RDMA). RDMA allows to perform read/ write operation on remote servers. The author state the architecture
+requires F + 1 CPU nodes for F CPU node failure. This is a good feature.
