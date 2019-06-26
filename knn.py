@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 ##perform KNN on iris dataset
 
 #upload data
-data = pd.read_csv("C:\\Users\\farid-PC\\Desktop\\iris.csv")
+data = pd.read_csv("C:\\Users\\PC\\Desktop\\iris.csv")
 
 
 #array
